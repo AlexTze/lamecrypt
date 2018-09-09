@@ -1,5 +1,5 @@
 """
-lamecrypt version 0.5.1
+lamecrypt version 0.5.2
 Copyright (C) 2018 Alex Tze
 
 This program is free software: you can redistribute it and/or modify
@@ -59,3 +59,6 @@ if args.encrypt:
     print(crypt.encrypt(args.encrypt))
 elif args.decrypt:
     print(crypt.decrypt(args.decrypt))
+else:
+    print(
+        "usage: python lamecrypt.py [-e] [-d] YourStringHere\nRun \"python lamecrypt.py -h\" for more detailed help")
