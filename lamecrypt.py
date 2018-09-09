@@ -1,5 +1,5 @@
 """
-lamecrypt version 0.5.2
+lamecrypt version 0.5.4
 Copyright (C) 2018 Alex Tze
 
 This program is free software: you can redistribute it and/or modify
@@ -31,7 +31,7 @@ class lamecrypt:
         enc_str = ""
         for i in range(len(string)):
             ordinals.append(ord(string[i]))
-            ordinals[i] += 2
+            ordinals[i] -= 2
             enc_str += chr(ordinals[i])
         return enc_str
 
@@ -43,7 +43,7 @@ class lamecrypt:
         dec_str = ""
         for i in range(len(string)):
             ordinals.append(ord(string[i]))
-            ordinals[i] -= 2
+            ordinals[i] += 2
             dec_str += chr(ordinals[i])
         return dec_str
 
