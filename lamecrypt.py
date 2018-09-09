@@ -50,12 +50,12 @@ class lamecrypt:
 
 crypt = lamecrypt()
 parser = argparse.ArgumentParser()
-parser.add_argument("string", type=str,
-                    help="string to encrypt or decrypt")
-parser.add_argument("-e", "--encrypt", help="encryption mode")
-parser.add_argument("-d", "--decrypt", help="decryption mode")
+parser.add_argument(
+    "-e", "--encrypt", help="encryption mode, should be followed by a plain text string")
+parser.add_argument(
+    "-d", "--decrypt", help="decryption mode, should be followed by an encrypted string")
 args = parser.parse_args()
 if args.encrypt:
-    print(crypt.encrypt(args.string))
+    print(crypt.encrypt(args.encrypt))
 elif args.decrypt:
-    print(crypt.decrypt(args.string))
+    print(crypt.decrypt(args.decrypt))
