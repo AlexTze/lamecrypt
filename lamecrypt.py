@@ -47,16 +47,15 @@ class lamecrypt:
             dec_str += chr(ordinals[i])
         return dec_str
 
-    def helpinfo(self):
-        """
-        This function returns the help message (str) of this crypto script.
-        """
-        hilfe = """usage:
-        python(3) lamecrypt.py -e <YourString>\tencrypts string <YourString>
-        python(3) lamecrypt.py -d <YourString>\tdecrypts string <YourString>
-        python(3) lamecrypt.py -h\tdisplays this message """
-        return hilfe
-
 
 crypt = lamecrypt()
 parser = argparse.ArgumentParser()
+parser.add_argument("string", type=str,
+                    help="string to encrypt or decrypt")
+parser.add_argument("-e", "--encrypt", help="encryption mode")
+parser.add_argument("-d", "--decrypt", help="decryption mode")
+args = parser.parse_args()
+if args.encrypt:
+    print(crypt.encrypt(args.string))
+elif args.decrypt:
+    print(crypt.decrypt(args.string))
