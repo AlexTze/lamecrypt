@@ -25,7 +25,7 @@ class lamecrypt:
 
     def encrypt(self, string):
         """
-        This function encrypts an ASCII string using a Caesar cipher-like cipher. It adds the value of all ASCII character codes of the string by 2 (for the sake of simplicity).
+        This function encrypts an ASCII string using a Caesar cipher-like cipher. It subtracts 2 from the value of all ASCII character codes by 2 (for the sake of simplicity).
         """
         ordinals = []
         enc_str = ""
