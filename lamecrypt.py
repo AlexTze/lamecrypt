@@ -62,6 +62,3 @@ if args.encrypt:
     print(crypt.encrypt(args.chr_string))
 elif args.decrypt:
     print(crypt.decrypt(args.chr_string))
-else:
-    print(
-        "usage: python lamecrypt.py [-e | -d] YourStringHere\nRun \"python lamecrypt.py -h\" for more detailed help")
