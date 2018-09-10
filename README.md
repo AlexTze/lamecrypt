@@ -7,4 +7,4 @@ Encryption: subtracts 2 from all ASCII character codes.
 
 Decryption: adds 2 to all ASCII character codes.
 ## Usage
-`python(3) lamecrypt.py [-e] [-d] <StringToEncrypt/Decrypt>`
+`python(3) lamecrypt.py [-e | -d] <StringToEncrypt/Decrypt>`
