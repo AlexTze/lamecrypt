@@ -59,6 +59,6 @@ group.add_argument("-d", "--decrypt", action="store_true",
 parser.add_argument("YourString", type=str, help="string to encrypt/decrypt")
 args = parser.parse_args()
 if args.encrypt:
-    print(crypt.encrypt(args.chr_string))
+    print(crypt.encrypt(args.YourString))
 elif args.decrypt:
-    print(crypt.decrypt(args.chr_string))
+    print(crypt.decrypt(args.YourString))
