@@ -1,5 +1,5 @@
 """
-lamecrypt version 0.5.4
+lamecrypt version 0.5.5
 Copyright (C) 2018 Alex Tze
 
 This program is free software: you can redistribute it and/or modify
@@ -49,11 +49,13 @@ class lamecrypt:
 
 
 crypt = lamecrypt()
-parser = argparse.ArgumentParser()
-parser.add_argument(
-    "-e", "--encrypt", help="encryption mode, should be followed by a plain text string")
-parser.add_argument(
-    "-d", "--decrypt", help="decryption mode, should be followed by an encrypted string")
+parser = argparse.ArgumentParser(
+    description="(lame) ASCII string encryption/decryption utility")
+group = parser.add_mutually_exclusive_group()
+group.add_argument("-e", "--encrypt", action="store_true",
+                   help="encryption mode, should be followed by a plain text string")
+group.add_argument("-d", "--decrypt", action="store_true",
+                   help="decryption mode, should be followed by an encrypted string")
 args = parser.parse_args()
 if args.encrypt:
     print(crypt.encrypt(args.encrypt))
@@ -61,4 +63,4 @@ elif args.decrypt:
     print(crypt.decrypt(args.decrypt))
 else:
     print(
-        "usage: python lamecrypt.py [-e] [-d] YourStringHere\nRun \"python lamecrypt.py -h\" for more detailed help")
+        "usage: python lamecrypt.py [-e | -d] YourStringHere\nRun \"python lamecrypt.py -h\" for more detailed help")
