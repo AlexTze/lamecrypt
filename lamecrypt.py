@@ -53,14 +53,15 @@ parser = argparse.ArgumentParser(
     description="(lame) ASCII string encryption/decryption utility")
 group = parser.add_mutually_exclusive_group()
 group.add_argument("-e", "--encrypt", action="store_true",
-                   help="encryption mode, should be followed by a plain text string")
+                   help="encryption mode")
 group.add_argument("-d", "--decrypt", action="store_true",
-                   help="decryption mode, should be followed by an encrypted string")
+                   help="decryption mode")
+parser.add_argument("YourString", type=str, help="string to encrypt/decrypt")
 args = parser.parse_args()
 if args.encrypt:
-    print(crypt.encrypt(args.encrypt))
+    print(crypt.encrypt(args.chr_string))
 elif args.decrypt:
-    print(crypt.decrypt(args.decrypt))
+    print(crypt.decrypt(args.chr_string))
 else:
     print(
         "usage: python lamecrypt.py [-e | -d] YourStringHere\nRun \"python lamecrypt.py -h\" for more detailed help")
